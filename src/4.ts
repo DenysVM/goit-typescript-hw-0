@@ -6,7 +6,7 @@ class Key {
     this.signature = Math.random();
   }
 
-  getSignature() {
+  getSignature(): number {
     return this.signature;
   }
 }
@@ -19,7 +19,7 @@ class Person {
     this.key = key;
   }
 
-  getKey() {
+  getKey(): Key {
     return this.key;
   }
 }
@@ -36,7 +36,7 @@ abstract class House {
 
   abstract openDoor(key: Key): void;
 
-  comeIn(person: Person) {
+  comeIn(person: Person): void {
     if (this.door) {
       this.tenants.push(person);
       console.log('Welcome home!');
